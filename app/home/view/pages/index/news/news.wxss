@@ -1,0 +1,40 @@
+.new{
+  width: 100%;
+  background-color: #fff;
+}
+.case_list,.new_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.new_list navigator{
+  flex-basis: 100%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid rgba(192, 191, 192, 0.5)
+}
+.new_list .new_img image{
+  height: 80px;
+}
+.new_list .new_img{
+  width: 30%;
+}
+.new_list .new_main{
+  width: 70%;
+  margin-left: 5px;
+}
+.new_list .new_main .main{
+  color: #333;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp:4;
+  height: 64px;
+  font-size: 12px;
+}
+.new_list .new_main .new_time{
+  font-size: 12px;
+}

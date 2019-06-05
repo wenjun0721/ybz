@@ -1,0 +1,127 @@
+<view class="container">
+  <image class="gb" src="../../image/rg.png" />
+  <p class="gb_text">test</p>
+  <!-- 广告图start -->
+  <view class='slider-banner'>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" previous-margin="" next-margin="" circular="true">
+      <block wx:for="{{bannerLists}}" wx:key="index">
+        <swiper-item>
+          <navigator id='{{item.adId}}' class="slide-image" bindtap='indexClick' data-url="{{item.adURL}}" data-str="{{item.adTypeStr}}" open-type='{{item.adURLType}}'>
+            <image src="{{item.adFile}}" class='bannerImage' mode='aspectFill' />
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 广告图end -->
+  <!--搜索-->
+  <view class="search">
+    <navigator url="../search/search">
+      <input type='text' placeholder='搜一搜'/>
+    </navigator>
+  </view>
+  <!--搜索end-->
+  <view class="nav">
+    <view class="nav_desc">
+      <view style="margin:0 auto;margin-top:5px;">
+        <view class="nav_img">
+          <image src="../../image/index_icon/look_n1.png" />
+        </view>
+        <view class="nav_title">走进红河</view>
+      </view>
+    </view>
+    <view class="nav_desc">
+      <view style="margin:0 auto;margin-top:7px;">
+        <view class="nav_img">
+          <image src="../../image/index_icon/look_n1.png" />
+        </view>
+        <view class="nav_title">工程案例</view>
+      </view>
+    </view>
+    <view class="nav_desc">
+      <view style="margin:0 auto;margin-top:7px;">
+        <view class="nav_img">
+          <image src="../../image/index_icon/look_n1.png" />
+        </view>
+        <view class="nav_title">快速预约</view>
+      </view>
+    </view>
+    <view class="nav_desc">
+      <view style="margin:0 auto;margin-top:7px;" bindtap='Tomap'>
+        <view class="nav_img">
+          <image src="../../image/index_icon/look_n1.png" />
+        </view>
+        <view class="nav_title">地图导航</view>
+      </view>
+    </view>
+    <view class="nav_desc">
+      <view style="margin:0 auto;margin-top:7px;">
+        <view class="nav_img">
+          <image src="../../image/index_icon/look_n1.png" />
+        </view>
+        <view class="nav_title">1</view>
+      </view>
+    </view>
+    <view class="nav_desc">
+      <view style="margin:0 auto;margin-top:7px;">
+        <view class="nav_img">
+          <image src="../../image/index_icon/look_n1.png" />
+        </view>
+        <view class="nav_title">联系我们</view>
+      </view>
+    </view>
+  </view>
+  <!--工程案例-->
+  <view class="case">
+    <view class="case_title">工程案例</view>
+    <view class="case_list">
+      <block wx:for="{{caselist}}" wx:key="index">
+        <view class="case_main">
+          <navigator url="#{{item.url}}">
+            <view class="main_img">
+              <image src="{{item.img}}" />
+            </view>
+            <view class="main_title">
+              {{item.title}}
+            </view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+    <view class="more" bindtap="morecase">更多案例</view>
+  </view>
+  
+  <!--工程案例end-->
+  <!-- 广告图start -->
+  <view class='slider-banner'>
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" previous-margin="" next-margin="" circular="true">
+      <block wx:for="{{bannerLists2}}" wx:key="index">
+        <swiper-item>
+          <navigator id='{{item.adId}}' class="slide-image" bindtap='indexClick' data-url="{{item.adURL}}" data-str="{{item.adTypeStr}}" open-type='{{item.adURLType}}'>
+            <image src="{{item.adFile}}" class='bannerImage' mode='aspectFill' />
+          </navigator>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 广告图end -->
+  <!-- 防水咨询 -->
+  <view class="new">
+    <view class="new_title">防水咨询</view>
+    <view class="new_list">
+      <block wx:for="{{newlist}}" wx:key="index">
+      <navigator url="#{{item.url}}">
+        <view class="new_img">
+          <image src="{{item.img}}" />
+        </view>
+        <view class="new_main">
+          <view class="main">{{item.title}}</view>
+          <view class="new_time">{{item.time}}</view>
+        </view>
+      </navigator>
+      </block>
+    </view>
+    <view class="more" bindtap="morenews">更多咨询</view>
+  </view>
+  <!-- 防水咨询end -->
+</view>

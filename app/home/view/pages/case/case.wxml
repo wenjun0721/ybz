@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="case">
+    <view class="case_list">
+      <block wx:for="{{caselist}}" wx:key="index">
+        <view class="case_main">
+          <navigator url="#{{item.url}}">
+            <view class="main_img">
+              <image src="{{item.img}}" />
+            </view>
+            <view class="main_title">
+              {{item.title}}
+            </view>
+          </navigator>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

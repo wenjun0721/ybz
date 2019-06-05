@@ -1,0 +1,30 @@
+/* pages/case/case.wxss */
+.case{
+  width: 100%;
+  margin-top: 10px;
+  background-color: #fff;
+}
+.case_list,.new_list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.case_main{
+  flex-basis: 50%;
+  flex-grow: 0;
+  flex-shrink: 1;
+  display: flex;
+  text-align: center;
+}
+.case_main navigator{
+  width: 80%;
+  margin: 0 auto;
+}
+.main_img image{
+  height: 100px;
+}
+.case_main .main_title{
+  font-size: 12px;
+  margin: 3px 0;
+}

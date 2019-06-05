@@ -1,0 +1,93 @@
+ 
+{extend name="base" /}
+{block name="main"}
+<div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">工程案例列表</strong>
+                                <button style="float: right;" type="button" class="btn btn-info" onclick="addAds()">添加工程案例</button>
+                            </div>
+                            <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th>工程案例ID</th>
+                                            <th>工程案例名称</th>
+                                            <th>工程案例位置</th>
+                                            <th>工程案例图片</th>
+                                            <th>工程案例添加时间</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="res.data" id="k"}
+                                        <tr>
+                                            <td>{$k.id}</td>
+                                            <td>{$k.name}</td>
+                                            <td>{$k.catName}</td>
+                                            <td><a target="_blank" href="../../../{$k.img}"><img src="../../../{$k.img}"></a></td>
+                                            <td>{$k.add_time}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" onclick="edit({$k.id})">修改</button>
+                                                <button type="button" class="btn btn-danger"  onclick="del({$k.id})">删除</button>
+                                            </td>
+                                        </tr>
+                                    {/volist}  
+                                    {if $res.last_page > 1}
+                                    <tfoot style="border-top: 1px solid #ccc">
+                                        <tr>
+                                            <td>
+                                                <div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="bootstrap-data-table_paginate">
+                                                {$page}
+                                                </div></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                    {/if}
+                                    </tbody>
+                                </table>
+                            </div> <!-- /.table-stats -->
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+            </div>
+
+{/block}
+
+{block name="js"}
+<script type="text/javascript">
+    function addAds() {
+        var url = "{:Url('Art/add')}";
+        window.location.href =  url ;
+    }
+    function del(id) {
+        layer.confirm('确定要删除吗？', {
+          btn: ['yes','no'] //按钮
+        }, function(){
+          $.post("{:Url('Art/del')}",{'id':id},function(data){
+                var json = JSON.parse(data);
+                layer.msg(json, {
+                    btn: ['知道了'],
+                    icon: 6,
+                    yes: function(){
+                        location.reload();
+                    }
+                });
+            })
+        }, function(){
+          
+        });
+    }
+
+    function edit(id) {
+        var url = "{:Url('Art/edit')}";
+        window.location.href =  url+'?id='+id ;
+    }
+    
+</script>
+{/block}

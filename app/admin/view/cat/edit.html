@@ -1,0 +1,79 @@
+ 
+{extend name="base" /}
+{block name="main"}
+<div class="content">
+            <div class="animated fadeIn">
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">修改分类</strong>
+                            </div>
+                            <div class="card-body">
+                                <!-- Credit Card -->
+                                <div id="pay-invoice">
+                                    <div class="card-body">
+                                        <div class="card-title">
+                                            <h3 class="text-center">分类</h3>
+                                        </div>
+                                        <hr>
+                                        <form action="{:Url('Cat/toedit')}" method="post" novalidate="novalidate" enctype="multipart/form-data">
+                                            
+                                            <div class="form-group">
+                                                <label for="catName" class="control-label mb-1">分类名称</label>
+                                                <input id="catName" name="catName" type="text" class="form-control" value="{$cat['catName']}">
+                                            </div>
+                                            
+                                            <div class="row form-group">
+                                                <div class="col col-md-1"><label for="img" class=" form-control-label">分类图片</label></div>
+                                                <div class="col-12 col-md-9"><input type="file" id="img" name="img" multiple="" class="form-control-file"></div>
+                                            </div>
+                                            <div class="row form-group">
+                                                <div class="col col-md-1"><label  class=" form-control-label">原图片</label></div>
+                                                <div class="col-12 col-md-9"><a target="_blank" href="../../../{$cat.catImg}"><img style="height: 100px" src="../../../{$cat.catImg}"></a></div>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="sumbit" class="btn btn-lg btn-info btn-block">
+                                                    <input type="hidden" name="catId" value="{$cat.catId}">
+                                                    <input type="hidden" name="catImg" value="{$cat.catImg}">
+                                                    <span id="payment-button-amount">修改</span>
+                                                    
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div> <!-- .card -->
+
+                    </div><!--/.col-->
+                </div>
+
+                
+
+               
+
+            </div>
+
+
+        </div><!-- .animated -->
+    </div><!-- .content -->
+
+{/block}
+
+{block name="js"}
+<script type="text/javascript">
+        $(function(){
+            $('#payment-button').click(function(){
+                var catName = $('#catName').val();
+                if (catName == '') {
+                    layer.msg('请填写分类名称');
+                    return false;
+                }
+            })
+        })
+    </script>
+{/block}

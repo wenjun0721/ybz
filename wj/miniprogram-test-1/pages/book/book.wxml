@@ -1,0 +1,44 @@
+<view class="container">
+  <view class="banner">
+    <image src="../../upload/banner/timg.jpg" />
+  </view>
+  <view class="title">预约服务</view>
+  <view class="form">
+    <view class="lable">您的姓名</view>
+    <input type='text' />
+    <view class="lable">您的电话</view>
+    <input type='text' />
+    <view class="lable">您的需求</view>
+    <checkbox-group name="checkbox">
+      <view>
+        <label class="checkbox">
+        <checkbox name="" value="屋面防水补漏维修"/>
+          屋面防水补漏维修
+        </label>
+      </view>
+      <view>
+        <label class="checkbox">
+        <checkbox name="" value="外墙防水补漏维修"/>
+          外墙防水补漏维修
+        </label>
+      </view>
+      <view>
+        <label class="checkbox">
+        <checkbox name="" value="窗台防水补漏维修"/>
+          窗台防水补漏维修
+        </label>
+      </view>
+      <view>
+        <label class="checkbox">
+        <checkbox name="" value="卫生间防水补漏维修"/>
+          卫生间防水补漏维修
+        </label>
+      </view>
+    </checkbox-group>
+    <view class="address">
+      服务地址<input type='text' />
+    </view>
+    
+  </view>
+  <view class="submit_">提交</view>
+</view>

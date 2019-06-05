@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/case/case",
+    "pages/book/book",
+    "pages/contact/contact",
+    "pages/index/case/case",
+    "pages/index/news/news",
+    "pages/index/map/map"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "红河",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "color": "#ccc",
+    "selectedColor": "#00abe4",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "icon/tab_home.png",
+        "text": "红河",
+        "selectedIconPath": "icon/tab_home_active.png"
+      },
+      {
+        "pagePath": "pages/case/case",
+        "iconPath": "icon/tab_classify.png",
+        "text": "工程案例",
+        "selectedIconPath": "icon/tab_classify_active.png"
+      },
+      {
+        "pagePath": "pages/contact/contact",
+        "iconPath": "icon/tab_shoppingCart.png",
+        "text": "一键拨号",
+        "selectedIconPath": "icon/tab_shoppingCart_active.png"
+      },
+      {
+        "pagePath": "pages/book/book",
+        "iconPath": "icon/tab_mine.png",
+        "text": "预约服务",
+        "selectedIconPath": "icon/tab_mine_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

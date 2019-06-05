@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="new">
+    <view class="new_list">
+      <block wx:for="{{newlist}}" wx:key="index">
+      <navigator url="#{{item.url}}">
+        <view class="new_img">
+          <image src="{{item.img}}" />
+        </view>
+        <view class="new_main">
+          <view class="main">{{item.title}}</view>
+          <view class="new_time">{{item.time}}</view>
+        </view>
+      </navigator>
+      </block>
+    </view>
+  </view>
+</view>

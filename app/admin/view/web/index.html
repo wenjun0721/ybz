@@ -1,0 +1,63 @@
+ 
+{extend name="base" /}
+{block name="main"}
+<div class="animated fadeIn">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong class="card-title">网站设置列表</strong>
+                                <!-- <button style="float: right;" type="button" class="btn btn-info" onclick="addAds()">添加网站设置</button> -->
+                            </div>
+                            <div class="table-stats order-table ov-h">
+                                <table class="table ">
+                                    <thead>
+                                        <tr>
+                                            <th>网站设置ID</th>
+                                            <th>网站设置名称</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    {volist name="res.data" id="k"}
+                                        <tr>
+                                            <td>{$k.id}</td>
+                                            <td>{$k.name}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-primary" onclick="edit({$k.id})">修改</button>
+                                            </td>
+                                        </tr>
+                                    {/volist}  
+                                    {if $res.last_page > 1}
+                                    <tfoot style="border-top: 1px solid #ccc">
+                                        <tr>
+                                            <td>
+                                                <div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="bootstrap-data-table_paginate">
+                                                {$page}
+                                                </div></div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                    {/if}
+                                    </tbody>
+                                </table>
+                            </div> <!-- /.table-stats -->
+                        </div>
+                    </div>
+                    
+                </div>
+
+                
+            </div>
+
+{/block}
+
+{block name="js"}
+<script type="text/javascript">
+    function edit(id) {
+        var url = "{:Url('Web/edit')}";
+        window.location.href =  url+'?id='+id ;
+    }
+    
+</script>
+{/block}
