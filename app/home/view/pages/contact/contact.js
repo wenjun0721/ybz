@@ -20,7 +20,7 @@ Page({
    */
   onReady: function () {
     wx.makePhoneCall({
-      phoneNumber: '15814860249',
+      phoneNumber: '13726754755',
     })
   },
 

@@ -24,4 +24,10 @@ class Login extends Base
     	Session::set('adminId',$res['id']);
     	$this->tips('登录成功',1,Url('Index/index'));
     }
+
+    public function logout()
+    { 
+        Session::set('adminId','');
+        $this->tips('退出成功',1,Url('Login/index'));
+    }
 }

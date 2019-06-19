@@ -2,20 +2,6 @@ const app = getApp().globalData;
 // pages/index/index.js
 Page({
   data: {
-    bannerLists2: [{
-      adId: 1,
-      adFile: "../../upload/banner/timg.jpg",
-      adTypeStr: "String",
-      adURLType: "String",
-      adURL: "#",
-    },
-    {
-      adId: 2,
-      adFile: "../../upload/banner/timg.jpg",
-      adTypeStr: "String",
-      adURLType: "String",
-      adURL: "#",
-    }],
     caselist:[{
       url:1,
       img:"../../upload/goods/good1.png",
@@ -111,10 +97,14 @@ Page({
       url: 'news/news'
     })
   },
-  Tomap:function(e){
-    wx.navigateTo({
-      url: 'map/map'
-    })
+  Tomap:function(){
+     wx.openLocation({ 
+        latitude: 23.013753,  
+        longitude: 113.3502,
+        name: "广州番禺万博中心",
+        address:"广州番禺万博中心",
+        scale: 28
+      })
   }
 
 })

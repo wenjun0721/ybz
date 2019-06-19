@@ -93,7 +93,7 @@
   
   <!--工程案例end-->
   <!-- 广告图start -->
-  <view class='slider-banner'>
+  <!-- <view class='slider-banner'>
     <swiper indicator-dots="true" autoplay="true" interval="5000" duration="1000" previous-margin="" next-margin="" circular="true">
       <block wx:for="{{bannerLists2}}" wx:key="index">
         <swiper-item>
@@ -103,10 +103,10 @@
         </swiper-item>
       </block>
     </swiper>
-  </view>
+  </view> -->
   <!-- 广告图end -->
   <!-- 防水咨询 -->
-  <view class="new">
+  <!-- <view class="new">
     <view class="new_title">防水咨询</view>
     <view class="new_list">
       <block wx:for="{{newlist}}" wx:key="index">
@@ -122,6 +122,6 @@
       </block>
     </view>
     <view class="more" bindtap="morenews">更多咨询</view>
-  </view>
+  </view> -->
   <!-- 防水咨询end -->
 </view>
